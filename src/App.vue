@@ -26,8 +26,6 @@ export default {
         //se l'utente non ha inserito nessun testo la richiesta Api non viene eseguita
         if(!(this.store.searchText==="")){
           store.RequestApi.searchTitle(this.store.searchText);
-          store.RequestApi.getFlag("it");
-          console.log(store.flagsList);
         }else{
           alert("inserisci un testo da cercare")
         }

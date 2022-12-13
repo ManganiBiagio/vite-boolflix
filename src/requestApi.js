@@ -23,6 +23,7 @@ export  class RequestApi{
             alert("errore nel caricamento dei dati: "+error)
         })
     }
+    //funzione che ritorna un url della bandiera corrispondente al codice del paese
     getFlag(codicePaese){
         codicePaese=codicePaese.toLowerCase();
         return `https://flagcdn.com/16x12/${codicePaese}.png`
