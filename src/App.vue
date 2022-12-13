@@ -1,6 +1,9 @@
 <template>
-  <TheHeader @search="searchdata()"></TheHeader>
-  <TheMain></TheMain>
+  <div class="my-container">
+    <TheHeader @search="searchdata()"></TheHeader>
+    <TheMain></TheMain>
+
+  </div>
   
 </template>
 
@@ -39,5 +42,13 @@ export default {
 
 <style lang="scss">
 @use "./styles/general.scss";
+.my-container{
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  background-image:url("../public/background.jpeg");
+  object-fit: cover;
+  color: var(--color-text-1);
+}
 
 </style>

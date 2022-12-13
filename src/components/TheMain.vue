@@ -1,6 +1,6 @@
 <template >
     <div class="container">
-        <h4 class="pt-4" >Serie</h4>
+        <h4 class="pt-4" v-if="store.series.length>0">Serie</h4>
         <div class="row row-cols-1 row-cols-md-3 g-4">
             
             <div class="col" v-for="serie in store.series">
@@ -8,7 +8,7 @@
             </div>
         </div>
 
-        <h4 class="pt-4">Film</h4>
+        <h4 class="pt-4" v-if="store.movies.length>0">Film</h4>
         <div class="row row-cols-1 row-cols-md-3 g-4">
             
             <div class="col" v-for="film in store.movies">

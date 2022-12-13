@@ -1,14 +1,23 @@
 <template >
     <div class="container">
-        <form class="row g-3" @submit.prevent="onSearch()">
-          <div class="col-md-6">
-             <label for="inputEmail4" class="form-label">Ricerca</label>
-             <input type="text" class="form-control" id="inputEmail4" v-model="searchText">
-          </div>
-          <div class="col-12">
-             <button type="submit" class="btn btn-primary">Ricerca</button>
-           </div>
-        </form>
+        <div class="d-flex py-3 align-items-center">
+            <h1 class="">BoolFlix</h1>
+            <form class="row g-3 ms-auto" @submit.prevent="onSearch()">
+              <div class="col-auto">
+                
+                      <input type="text" class="form-control" id="inputEmail4" v-model="searchText" placeholder="Ricerca serie o film">
+                
+                      
+              </div>
+              <div class="col-auto">
+               
+
+                    <button type="submit" class="btn btn-primary">Ricerca</button>
+                
+               </div>
+            </form>
+
+        </div>
 
     </div>
     
@@ -36,6 +45,7 @@ export default {
     
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
+
     
 </style>

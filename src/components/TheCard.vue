@@ -4,7 +4,7 @@
         <img :src="store.RequestApi.getCardImage(serie.backdrop_path)" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">{{ serie.name }}</h5>
-            <ul>
+            <ul class="card-ul">
                 <li class="card-text">Titolo originale:{{ serie.original_name }}</li>
                 <li class="card-text">
                     Lingua: {{ serie.original_language }}
@@ -37,7 +37,7 @@
         <img :src="store.RequestApi.getCardImage(film.backdrop_path)" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">{{ film.title }}</h5>
-            <ul>
+            <ul class="card-ul">
                 <li class="card-text">Titolo originale:{{ film.original_title }}</li>
                 <li class="card-text">
                     Lingua: {{ film.original_language }}
@@ -76,6 +76,32 @@ export default {
 
 </script>
 <style lang="scss">
+.card{
+    color: var(--color-text-2);
+    position: relative !important;
+    &:hover .card-ul{
+        display: block ;
+        
+        
+
+    }
+    
+}
+.card-img-top{
+    height: 200px;
+
+}
+.card-ul{
+    display: none ;
+    position: absolute !important;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color:var(--bg-card) ;
+
+    
+}
 
 
 </style>
