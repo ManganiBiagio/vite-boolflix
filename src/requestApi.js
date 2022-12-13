@@ -6,6 +6,7 @@ import {store} from "./store"
 export  class RequestApi{
     constructor(key){
         this.key=key
+
     }
     searchTitle(searchedText){
         axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${this.key}&language=it_IT`,{
@@ -23,21 +24,8 @@ export  class RequestApi{
         })
     }
     getFlag(codicePaese){
-        let toReturn;
-        axios.get(`https://flagcdn.com/${codicePaese}.svg`)
-        .then((resp)=>{
-            
-            toReturn=resp.data;
-            console.log(resp.data);
-            return toReturn
-           
-    
-        }).catch(function(error){
-            console.log(error);
-
-
-        })
-        
+        codicePaese=codicePaese.toLowerCase();
+        return `https://flagcdn.com/16x12/${codicePaese}.png`
     }
 } 
 
