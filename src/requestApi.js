@@ -22,5 +22,26 @@ export  class RequestApi{
             alert("errore nel caricamento dei dati: "+error)
         })
     }
+    getFlag(codicePaese){
+        let toReturn;
+        axios.get(`https://flagcdn.com/${codicePaese}.svg`)
+        .then((resp)=>{
+            
+            toReturn=resp.data;
+            console.log(resp.data);
+            return toReturn
+           
+    
+        }).catch(function(error){
+            console.log(error);
+
+
+        })
+        
+    }
 } 
+
+
+
+
     

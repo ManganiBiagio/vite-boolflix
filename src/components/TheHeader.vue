@@ -27,6 +27,7 @@ export default {
         onSearch(){
             //salvo nello store il testo inserito dall'utente
             store.searchText=this.searchText;
+            store.RequestApi.getFlag("it")
             //lancio un evento search che sara asoltato da App.vue per aggiornare i dati
             this.$emit("search");
 
