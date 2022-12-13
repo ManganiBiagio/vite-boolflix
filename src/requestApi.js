@@ -8,7 +8,7 @@ export  class RequestApi{
         this.key=key
 
     }
-    searchTitle(searchedText){
+    searchSeries(searchedText){
         axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${this.key}&language=it_IT`,{
             params:{
                 query:searchedText
@@ -17,16 +17,32 @@ export  class RequestApi{
             //log di verifica dati 
             console.log(resp.data.results);
             //salvo nello store la risposta della chiamata API 
-            store.movies=resp.data.results;
+            store.series=resp.data.results;
         }).catch(function (error){
             //nel caso in cui l'Api dia un errore lo dichiaro all'utente e ne mostro ErrorNumber
             alert("errore nel caricamento dei dati: "+error)
         })
     }
-    //funzione che ritorna un url della bandiera corrispondente al codice del paese
+    //funzione che ritorna un url della bandiera corrispondente al codice del paese (Codice ISO 3166)
     getFlag(codicePaese){
         codicePaese=codicePaese.toLowerCase();
         return `https://flagcdn.com/16x12/${codicePaese}.png`
+    }
+
+    searchMovie(searchedText){axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${this.key}&language=it_IT`,{
+        params:{
+            query:searchedText
+        }
+    }).then((resp)=>{
+        //log di verifica dati 
+        console.log(resp.data.results);
+        //salvo nello store la risposta della chiamata API 
+        store.movies=resp.data.results;
+    }).catch(function (error){
+        //nel caso in cui l'Api dia un errore lo dichiaro all'utente e ne mostro ErrorNumber
+        alert("errore nel caricamento dei dati: "+error)
+    })
+
     }
 } 
 

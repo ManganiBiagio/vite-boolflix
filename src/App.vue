@@ -25,7 +25,8 @@ export default {
       searchdata(){
         //se l'utente non ha inserito nessun testo la richiesta Api non viene eseguita
         if(!(this.store.searchText==="")){
-          store.RequestApi.searchTitle(this.store.searchText);
+          store.RequestApi.searchSeries(this.store.searchText);
+          store.RequestApi.searchMovie(this.store.searchText)
         }else{
           alert("inserisci un testo da cercare")
         }
