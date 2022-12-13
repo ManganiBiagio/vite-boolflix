@@ -23,7 +23,7 @@
                 
                 </li>
                 
-                <li class="card-text">Voto:{{ serie.vote_average }}</li>
+                <li class="card-text">Voto:<i v-for="star in store.roundVote(serie.vote_average)" class="fa-solid fa-star"></i></li>
             </ul>
 
         </div>
@@ -48,7 +48,7 @@
                 </li>
                 
                 
-                <li class="card-text">Voto:{{ film.vote_average }}</li>
+                <li class="card-text">Voto:<i v-for="star in  store.roundVote(film.vote_average)" class="fa-solid fa-star"></i></li>
             </ul>
 
         </div>
@@ -76,5 +76,6 @@ export default {
 
 </script>
 <style lang="scss">
+
 
 </style>

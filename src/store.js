@@ -24,6 +24,12 @@ export const store = reactive({
             "tr":"TR"
         
         },
+    roundVote(voto){
+        let toReturn=Math.floor(voto);
+        toReturn/=2;
+        toReturn=Math.round(toReturn)
+        return toReturn;
+    }    
         
 
     
