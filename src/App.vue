@@ -7,11 +7,17 @@
 
 
 <script >
+import {store} from './store'
 import TheHeader from './components/TheHeader.vue';
 import TheMain from './components/TheMain.vue';
 
 export default {
-    components: { TheHeader, TheMain }
+    components: { TheHeader, TheMain },
+    data(){
+      return{
+        store
+      }
+    }
 }
 </script>
 
