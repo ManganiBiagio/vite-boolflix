@@ -25,9 +25,8 @@ export const store = reactive({
         
         },
     roundVote(voto){
-        let toReturn=Math.floor(voto);
-        toReturn/=2;
-        toReturn=Math.round(toReturn)
+        let toReturn=Math.round(voto);
+        toReturn=toReturn%5;
         return toReturn;
     }    
         
