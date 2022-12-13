@@ -1,7 +1,7 @@
 <template >
 <template v-if="serie">
     <div class="card">
-        <img class="card-img-top" alt="...">
+        <img :src="store.RequestApi.getCardImage(serie.backdrop_path)" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">{{ serie.name }}</h5>
             <ul>
@@ -30,9 +30,11 @@
     </div>
 
 </template>
+
+
 <template v-if="film">
     <div class="card">
-        <img class="card-img-top" alt="...">
+        <img :src="store.RequestApi.getCardImage(film.backdrop_path)" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">{{ film.title }}</h5>
             <ul>

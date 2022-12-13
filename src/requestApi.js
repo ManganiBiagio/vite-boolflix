@@ -44,6 +44,17 @@ export  class RequestApi{
     })
 
     }
+    //funzione che restituisce URL dell'immagine corrispondente
+    //se non esiste ci inserisco un placeholder
+    getCardImage(endUrl){
+        if(endUrl!=null){
+            return `https://image.tmdb.org/t/p/w780/${endUrl}`
+        }
+        else{
+            return "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+        }
+
+    }
 } 
 
 
