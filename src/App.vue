@@ -1,5 +1,5 @@
 <template>
-  <TheHeader></TheHeader>
+  <TheHeader @search="searchdata()"></TheHeader>
   <TheMain></TheMain>
   
 </template>
@@ -16,6 +16,12 @@ export default {
     data(){
       return{
         store
+      }
+    },
+    methods:{
+      searchdata(){
+        store.RequestApi.searchTitle(this.store.searchText)
+        
       }
     }
 }
