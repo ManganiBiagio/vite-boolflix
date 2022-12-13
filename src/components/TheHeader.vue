@@ -6,7 +6,7 @@
              <input type="email" class="form-control" id="inputEmail4" v-model="searchText">
           </div>
           <div class="col-12">
-             <button type="submit" class="btn btn-primary">Sign in</button>
+             <button type="submit" class="btn btn-primary">Ricerca</button>
            </div>
         </form>
 
