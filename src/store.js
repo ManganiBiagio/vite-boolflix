@@ -14,7 +14,12 @@ export const store = reactive({
             "ja":"JP",
             "fr":"FR",
             "ko":"KR",
-            "hi":"IN"
+            "hi":"IN",
+            "es":"ES",
+            "pt":"PT",
+            "de":"DE",
+            "hu":"HU",
+            "tr":"TR"
         
         },
         
