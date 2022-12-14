@@ -1,7 +1,8 @@
 <template>
   <div class="my-container">
     <TheHeader class="box-header"  @search="searchdata()"></TheHeader>
-    <TheMain class="main"></TheMain>
+    <TheMain v-if="!store.load" class="main"></TheMain>
+    <TheLoader v-if="store.load"></TheLoader>
 
   </div>
   
@@ -13,9 +14,10 @@
 import {store} from './store'
 import TheHeader from './components/TheHeader.vue';
 import TheMain from './components/TheMain.vue';
+import TheLoader from './components/TheLoader.vue';
 
 export default {
-    components: { TheHeader, TheMain },
+    components: { TheHeader, TheMain, TheLoader },
     data(){
       return{
         store
@@ -28,6 +30,7 @@ export default {
       searchdata(){
         //se l'utente non ha inserito nessun testo la richiesta Api non viene eseguita
         if(!(this.store.searchText==="")){
+          store.load=true;
           store.RequestApi.searchSeries(this.store.searchText);
           store.RequestApi.searchMovie(this.store.searchText)
         }else{

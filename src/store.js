@@ -2,6 +2,7 @@ import { reactive } from "vue";
 import {RequestApi} from "./requestApi"
 
 export const store = reactive({
+    load:false,
     searchText:"",
     movies:[],
     series:[],

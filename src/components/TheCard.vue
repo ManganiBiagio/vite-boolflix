@@ -29,7 +29,7 @@
                 <li class="">Voto:<i v-for="star in roundVote(getCorrectElement.vote_average)" class="fa-solid fa-star"></i></li>
             </ul>
             <div>{{getCorrectElement.overview}}</div>
-            <div v-if="getCorrectElement.cast" >Cast:
+            <div v-if="getCorrectElement.cast && getCorrectElement.cast.length>0" >Cast:
                 <ul>
                     <li  v-for="(actor,index) in getCorrectElement.cast" >
                             {{actor.name}}

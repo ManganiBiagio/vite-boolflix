@@ -18,9 +18,11 @@ export  class RequestApi{
             console.log(resp.data.results);
             //salvo nello store la risposta della chiamata API 
             store.series=resp.data.results;
+            store.load=false;
         }).catch(function (error){
             //nel caso in cui l'Api dia un errore lo dichiaro all'utente e ne mostro ErrorNumber
-            alert("errore nel caricamento dei dati: "+error)
+            alert("errore nel caricamento dei dati: "+error);
+            store.load=false;
         })
     }
     
@@ -34,9 +36,11 @@ export  class RequestApi{
         console.log(resp.data.results);
         //salvo nello store la risposta della chiamata API 
         store.movies=resp.data.results;
+        store.load=false;
     }).catch(function (error){
         //nel caso in cui l'Api dia un errore lo dichiaro all'utente e ne mostro ErrorNumber
         alert("errore nel caricamento dei dati: "+error)
+        store.load=false;
     })
 
     }
