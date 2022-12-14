@@ -1,7 +1,7 @@
 <template>
   <div class="my-container">
-    <TheHeader @search="searchdata()"></TheHeader>
-    <TheMain></TheMain>
+    <TheHeader class="box-header"  @search="searchdata()"></TheHeader>
+    <TheMain class="main"></TheMain>
 
   </div>
   
@@ -50,5 +50,17 @@ export default {
   object-fit: cover;
   color: var(--color-text-1);
 }
-
+.box-header{
+  position: fixed;
+  top: 10px;
+  right: 0;
+  left: 0;
+  z-index: 3;
+  background-color: lightpink;
+  border-radius: 30px;
+  
+}
+.main{
+  margin-top: 80px;
+}
 </style>
