@@ -170,9 +170,13 @@ export default {
         color: #999;
       }
     }
+    .front{
+        overflow: hidden;
+    }
     .front h1{
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         display: inline-block;
+        
        
 
     }
