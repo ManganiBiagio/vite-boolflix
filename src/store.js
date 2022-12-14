@@ -3,6 +3,7 @@ import {RequestApi} from "./requestApi"
 
 export const store = reactive({
     load:false,
+    isSerie:true,
     searchText:"",
     movies:[],
     series:[],
