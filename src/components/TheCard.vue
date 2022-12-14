@@ -87,6 +87,7 @@ export default {
         codicePaese=codicePaese.toLowerCase();
         return `https://flagcdn.com/16x12/${codicePaese}.png`
     },
+    //funzione che arrotoda un voto in decimi in cinquesimi
     roundVote(voto){
         let toReturn=Math.round(voto);
         toReturn=toReturn%5;
@@ -124,6 +125,7 @@ export default {
     left: 0;
     right: 0;
     background-color:var(--bg-card) ;
+    
 
     
 }
