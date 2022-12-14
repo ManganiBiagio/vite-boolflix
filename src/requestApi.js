@@ -23,11 +23,7 @@ export  class RequestApi{
             alert("errore nel caricamento dei dati: "+error)
         })
     }
-    //funzione che ritorna un url della bandiera corrispondente al codice del paese (Codice ISO 3166)
-    getFlag(codicePaese){
-        codicePaese=codicePaese.toLowerCase();
-        return `https://flagcdn.com/16x12/${codicePaese}.png`
-    }
+    
 
     searchMovie(searchedText){axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${this.key}&language=it_IT`,{
         params:{
@@ -44,17 +40,7 @@ export  class RequestApi{
     })
 
     }
-    //funzione che restituisce URL dell'immagine corrispondente
-    //se non esiste ci inserisco un placeholder
-    getCardImage(endUrl){
-        if(endUrl!=null){
-            return `https://image.tmdb.org/t/p/w780/${endUrl}`
-        }
-        else{
-            return "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
-        }
-
-    }
+    
 } 
 
 
