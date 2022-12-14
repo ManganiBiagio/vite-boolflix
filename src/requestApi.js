@@ -40,6 +40,36 @@ export  class RequestApi{
     })
 
     }
+
+    searchCast(movieId,movie){
+        //controllo se ricerco il cast per una serie o per un film
+        let txtToFind;
+        if(movie.name){
+            txtToFind="tv"
+        }else{
+            txtToFind="movie"
+        }
+        axios.get(`https://api.themoviedb.org/3/${txtToFind}/${movieId}/credits?api_key=${this.key}&language=it_IT`)
+        .then((resp)=>{
+           
+            
+            const toReturn=[]
+            //ciclo che utilizzo per salvare 5 o mneno attori del cast nel dato del movie
+            for(let i=0 ;i<resp.data.cast.length && i<5 ;i++){
+                toReturn.push(resp.data.cast[i])
+
+            }
+            console.log(toReturn);
+            movie.cast=toReturn;
+        }).catch(function (error){
+            //nel caso in cui l'Api dia un errore lo dichiaro all'utente e ne mostro ErrorNumber
+            alert("errore nel caricamento dei dati: "+error)
+        })
+    
+
+    }
+
+    
     
 } 
 

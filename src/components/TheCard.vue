@@ -27,7 +27,21 @@
                 </li>
                 
                 <li class="">Voto:<i v-for="star in roundVote(getCorrectElement.vote_average)" class="fa-solid fa-star"></i></li>
-            </ul></p>
+            </ul>
+            <div>{{getCorrectElement.overview}}</div>
+            <div v-if="getCorrectElement.cast" >Cast:
+                <ul>
+                    <li  v-for="(actor,index) in getCorrectElement.cast" >
+                            {{actor.name}}
+                        
+                        
+    
+                    </li>
+
+                </ul>
+            </div>
+        
+        </p>
     </div>
 </div>
 
@@ -52,8 +66,8 @@ export default {
     //se non esiste ci inserisco un placeholder
     getCardImage(movie){
         
-        if(movie.backdrop_path!=null){
-            return `https://image.tmdb.org/t/p/w780/${movie.backdrop_path}`
+        if(movie.poster_path!=null){
+            return `https://image.tmdb.org/t/p/w780/${movie.poster_path}`
         }
         else{
             return "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
@@ -85,6 +99,9 @@ export default {
         getOriginaleTitle(){
             return this.serie ? this.serie.original_name : this.film.original_title
         },
+        // getCast(){
+        //     return this.getCorrectElement.
+        // }
     }
 
 
@@ -152,6 +169,12 @@ export default {
         line-height: 160%;
         color: #999;
       }
+    }
+    .front h1{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        display: inline-block;
+       
+
     }
 }
 

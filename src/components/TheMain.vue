@@ -4,7 +4,7 @@
         <div class="row row-cols-1 row-cols-md-3 g-4">
             
             <div class="col" v-for="serie in store.series">
-                <TheCard  :serie="serie"></TheCard>
+                <TheCard  :serie="serie" @mouseenter="onHoverCard(serie)"></TheCard>
             </div>
         </div>
 
@@ -12,7 +12,7 @@
         <div class="row row-cols-1 row-cols-md-3 g-4">
             
             <div class="col" v-for="film in store.movies">
-                <TheCard  :film="film"></TheCard>
+                <TheCard  :film="film" @mouseenter="onHoverCard(film)"></TheCard>
             </div>
         </div>
     </div>
@@ -27,7 +27,13 @@ export default {
             store
         };
     },
-    components: { TheCard }
+    components: { TheCard },
+    methods:{
+        onHoverCard(movie){
+            store.RequestApi.searchCast(movie.id,movie)
+            
+        }
+    }
 }
 </script>
 <style lang="scss">
