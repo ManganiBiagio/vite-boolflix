@@ -81,8 +81,8 @@ export default {
     },
     //funzione che arrotoda un voto in decimi in cinquesimi
     roundVote(voto){
+        voto=voto/2
         let toReturn=Math.round(voto);
-        toReturn=toReturn%5;
         return toReturn;
     }   
 
@@ -160,7 +160,8 @@ export default {
       width: inherit;
       background-size: cover!important;
       background-position: center!important;
-      height: 220px;
+      
+      height: 320px;
       padding: 1em 2em;
       background: #313131;
       border-radius: 10px;
