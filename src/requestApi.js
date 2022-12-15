@@ -46,6 +46,10 @@ export  class RequestApi{
     }
 
     searchCast(movieId,movie){
+        //controllo se è gia stato scaricato in questa sessione
+        if(movie.cast){
+            return
+        }
         //controllo se ricerco il cast per una serie o per un film
         let txtToFind;
         if(movie.name){
