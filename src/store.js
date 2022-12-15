@@ -1,5 +1,6 @@
 import { reactive } from "vue";
-import {RequestApi} from "./requestApi"
+import {RequestApi} from "./requestApi";
+import { NavbarLinks } from "./navbarLinks";
 
 export const store = reactive({
     load:false,
@@ -26,6 +27,7 @@ export const store = reactive({
             "tr":"TR"
         
         },
+    NavbarLinks:new NavbarLinks(),    
      
         
 

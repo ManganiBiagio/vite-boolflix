@@ -59,7 +59,7 @@ export default {
   right: 0;
   left: 0;
   z-index: 3;
-  background-color: lightpink;
+  background-color: var(--bg-header);
   border-radius: 30px;
   
 }

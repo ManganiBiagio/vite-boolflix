@@ -1,11 +1,17 @@
 <template >
     <div class="container">
-        <div class="d-flex py-3 align-items-center ">
-            <h1 class="">BoolFlix</h1>
+        <div class=" box-nav  ">
+            <div class="d-flex">
+                <h1 class="">BoolFlix</h1>
+            
+                <NavbarLink></NavbarLink>
+
+            </div>
+            
 
 
 
-            <form action="" class="search-bar d-flex justify-content-end  " @submit.prevent="onSearch()">
+            <form v-if="store.NavbarLinks.selectedIndex===1" action="" class="search-bar d-flex justify-content-end  " @submit.prevent="onSearch()">
 
 
 
@@ -31,31 +37,39 @@
 </template>
 <script>
 import { store } from '../store'
+import NavbarLink from './NavbarLink.vue';
 export default {
     data() {
         return {
             searchText: "",
             store
-        }
+        };
     },
     methods: {
         onSearch() {
             //salvo nello store il testo inserito dall'utente
             store.searchText = this.searchText;
-
             //lancio un evento search che sara asoltato da App.vue per aggiornare i dati
             this.$emit("search");
-
         },
-        onChangeRadio(){
-            store.isSerie=!store.isSerie;
+        onChangeRadio() {
+            store.isSerie = !store.isSerie;
         }
-
-    }
-
+    },
+    components: { NavbarLink }
 }
 </script>
 <style lang="scss" scoped>
+
+// d-flex py-3 align-items-center
+.box-nav{
+    display: flex ;
+    padding: 1rem 0;
+    align-items: center;
+    justify-content: space-between;
+    
+
+}
 .search-bar input,
 .search-btn,
 .search-btn:before,
@@ -214,6 +228,7 @@ export default {
 
 // radio button 
 .switch-button {
+    
     background: rgba(255, 255, 255, 0.56);
     border-radius: 30px;
     overflow: hidden;
