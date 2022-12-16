@@ -31,7 +31,7 @@
             <div>{{getCorrectElement.overview}}</div>
             <div v-if="getCorrectElement.cast && getCorrectElement.cast.length>0" >Cast:
                 <ul>
-                    <li  v-for="(actor,index) in getCorrectElement.cast" >
+                    <li  v-for="(actor,index) in getCorrectElement.cast.slice(0,5)" >
                             {{actor.name}}
                         
                         

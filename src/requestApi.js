@@ -4,6 +4,7 @@ import {store} from "./store"
 //le chiamate axios verranno effettuate qua e inoltre la risposta sarà salvata direttamente 
 //nello store in maniera dinamica
 export  class RequestApi{
+    key="";
     constructor(key){
         this.key=key
 
@@ -61,14 +62,9 @@ export  class RequestApi{
         .then((resp)=>{
            
             
-            const toReturn=[]
-            //ciclo che utilizzo per salvare 5 o mneno attori del cast nel dato del movie
-            for(let i=0 ;i<resp.data.cast.length && i<5 ;i++){
-                toReturn.push(resp.data.cast[i])
-
-            }
-            console.log(toReturn);
-            movie.cast=toReturn;
+          
+            
+            movie.cast=resp.data.cast;
         }).catch(function (error){
             //nel caso in cui l'Api dia un errore lo dichiaro all'utente e ne mostro ErrorNumber
             alert("errore nel caricamento dei dati: "+error)
