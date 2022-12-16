@@ -160,8 +160,8 @@ export default {
       width: inherit;
       background-size: cover!important;
       background-position: center!important;
-      
-      height: 320px;
+      width: 350px;
+      height: 350px;
       padding: 1em 2em;
       background: #313131;
       border-radius: 10px;

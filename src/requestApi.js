@@ -75,6 +75,21 @@ export  class RequestApi{
         })
     
 
+    };
+    searchPopular(){
+        axios.get(`https://api.themoviedb.org/3/trending/all/day?api_key=${this.key}&language=it_IT`,{
+            
+        }).then((resp)=>{
+            
+            
+            store.populars=resp.data.results;
+            store.load=false;
+        }).catch(function (error){
+            //nel caso in cui l'Api dia un errore lo dichiaro all'utente e ne mostro ErrorNumber
+            alert("errore nel caricamento dei dati: "+error);
+            store.load=false;
+        })
+
     }
 
     

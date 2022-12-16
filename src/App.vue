@@ -1,7 +1,8 @@
 <template>
   <div class="my-container">
     <TheHeader class="box-header"  @search="searchdata()"></TheHeader>
-    <TheMain v-if="!store.load" class="main"></TheMain>
+    <TheMain v-if="!store.load && store.NavbarLinks.selectedIndex===1" class="main"></TheMain>
+    <ThePopular v-if="!store.load&&store.NavbarLinks.selectedIndex===0"></ThePopular>
     <TheLoader v-if="store.load"></TheLoader>
 
   </div>
@@ -15,9 +16,10 @@ import {store} from './store'
 import TheHeader from './components/TheHeader.vue';
 import TheMain from './components/TheMain.vue';
 import TheLoader from './components/TheLoader.vue';
+import ThePopular from './components/ThePopular.vue';
 
 export default {
-    components: { TheHeader, TheMain, TheLoader },
+    components: { TheHeader, TheMain, TheLoader, ThePopular },
     data(){
       return{
         store
@@ -37,6 +39,9 @@ export default {
           alert("inserisci un testo da cercare")
         }
       }
+    },
+    mounted(){
+      store.RequestApi.searchPopular();
     }
 }
 </script>
