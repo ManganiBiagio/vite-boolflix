@@ -21,7 +21,7 @@
                     <span>Search</span>
                 </button>
             </form>
-            <div class="switch-button" @change="onChangeRadio()">
+            <div v-if="store.NavbarLinks.selectedIndex===1" class="switch-button" @change="onChangeRadio()">
 
                 <input class="switch-button-checkbox" type="checkbox">
                 <label class="switch-button-label" for=""><span
